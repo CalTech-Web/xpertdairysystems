@@ -4,17 +4,26 @@ import { Phone, ArrowRight } from "lucide-react";
 import ServiceIcon from "@/components/ServiceIcon";
 import Reveal from "@/components/Reveal";
 import { TopoBackground, MeshBackground } from "@/components/BgPatterns";
+import { BreadcrumbSchema } from "@/components/Schema";
 import { SERVICES } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Dairy Equipment Services in Central Valley",
   description:
-    "Dairy equipment services: pump repair, separator maintenance, agitator service, fabrication, emergency response, installation, preventative maintenance, and parts support across California's Central Valley.",
+    "Eight dairy equipment services in California's Central Valley: pump repair, separator and agitator service, fabrication, installation, preventative maintenance, parts, and emergency support.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Dairy Equipment Services in Central Valley | XPERT Dairy Systems",
+    description:
+      "Eight dairy equipment services from Tulare, CA. Pump repair, separator and agitator service, fabrication, installation, preventative maintenance, parts, and emergency support.",
+    url: "/services",
+  },
 };
 
 export default function ServicesPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "Services", url: "/services" }]} />
       <section className="relative text-white overflow-hidden">
         <MeshBackground />
         <TopoBackground variant="dark" opacity={0.05} />

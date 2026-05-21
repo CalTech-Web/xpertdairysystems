@@ -3,6 +3,7 @@ import { Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { OrganizationSchema, LocalBusinessSchema, WebSiteSchema } from "@/components/Schema";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,29 +22,34 @@ const SITE_URL = "https://xpertdairysystems.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "XPERT Dairy Systems Inc. | Central Valley Dairy Equipment Service",
+    default: "Central Valley Dairy Equipment Service | XPERT Dairy Systems",
     template: "%s | XPERT Dairy Systems",
   },
   description:
-    "Tulare based dairy equipment specialists. Pump repair, separator maintenance, agitator service, fabrication, and emergency support for dairies across California's Central Valley.",
+    "Central Valley dairy equipment service from Tulare. Pump repair, separator and agitator service, fabrication, installation, and 24/7 emergency support. Call (559) 946-6131.",
   keywords: [
-    "dairy equipment repair",
-    "manure pump repair",
-    "separator maintenance",
-    "agitator service",
+    "dairy equipment repair Central Valley",
+    "manure pump repair Tulare",
+    "separator maintenance dairy",
+    "agitator service California",
     "dairy fabrication",
     "Tulare dairy service",
-    "Central Valley dairy",
+    "emergency dairy equipment service",
   ],
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "XPERT Dairy Systems Inc.",
+    title: "Central Valley Dairy Equipment Service | XPERT Dairy Systems",
     description:
-      "XPERT Solutions. Stronger Dairies. Central Valley dairy equipment service, repair, and fabrication.",
+      "XPERT Solutions. Stronger Dairies. Pump repair, separator and agitator service, fabrication, and emergency support across California's Central Valley.",
     url: SITE_URL,
     siteName: "XPERT Dairy Systems",
     type: "website",
+    locale: "en_US",
   },
-  robots: { index: true, follow: true },
+  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
+  authors: [{ name: "XPERT Dairy Systems Inc." }],
+  category: "Agriculture",
 };
 
 export default function RootLayout({
@@ -57,6 +63,9 @@ export default function RootLayout({
       className={`${inter.variable} ${interTight.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-xds-ink">
+        <OrganizationSchema />
+        <LocalBusinessSchema />
+        <WebSiteSchema />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

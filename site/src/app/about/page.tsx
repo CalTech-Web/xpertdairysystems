@@ -4,11 +4,19 @@ import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import ServiceIcon from "@/components/ServiceIcon";
 import Reveal from "@/components/Reveal";
 import { TopoBackground, MeshBackground } from "@/components/BgPatterns";
+import { BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
-  title: "About XPERT Dairy Systems",
+  title: "About | Tulare Dairy Equipment Service Company",
   description:
-    "Locally owned Tulare based dairy equipment service company. Meet the team behind XPERT Dairy Systems Inc.",
+    "Locally owned Tulare, CA dairy equipment service company. Meet the leadership team behind XPERT Dairy Systems Inc., serving Central Valley dairies daily.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About XPERT Dairy Systems | Tulare Dairy Equipment Service",
+    description:
+      "Locally owned Tulare, CA dairy equipment service company. Meet the team behind XPERT Dairy Systems.",
+    url: "/about",
+  },
 };
 
 const leadership = [
@@ -44,6 +52,7 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "About", url: "/about" }]} />
       <section className="relative text-white overflow-hidden">
         <MeshBackground />
         <TopoBackground variant="dark" opacity={0.05} />

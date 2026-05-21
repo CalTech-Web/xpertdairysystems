@@ -4,11 +4,19 @@ import { Handshake, ArrowRight, Phone, Mail } from "lucide-react";
 import ServiceIcon, { type ServiceIconName } from "@/components/ServiceIcon";
 import Reveal from "@/components/Reveal";
 import { TopoBackground, MeshBackground, BlueprintLines } from "@/components/BgPatterns";
+import { BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
-  title: "Dealer & Service Partners",
+  title: "Dealer & Service Partner Program for Dairy Manufacturers",
   description:
-    "Long term dealer and service partnerships for dairy equipment manufacturers in California's Central Valley.",
+    "Manufacturer dealer and service partner program for dairy equipment in California's Central Valley. Local installation, repair, warranty, and parts support from XPERT Dairy Systems.",
+  alternates: { canonical: "/dealer-partners" },
+  openGraph: {
+    title: "Dealer & Service Partner Program | XPERT Dairy Systems",
+    description:
+      "Manufacturer dealer and service partnerships for dairy equipment in California's Central Valley.",
+    url: "/dealer-partners",
+  },
 };
 
 const offers: { icon: ServiceIconName; title: string; body: string }[] = [
@@ -33,6 +41,7 @@ const benefits = [
 export default function DealerPartnersPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "Dealer Partners", url: "/dealer-partners" }]} />
       <section className="relative text-white overflow-hidden">
         <MeshBackground />
         <BlueprintLines className="hidden lg:block" />

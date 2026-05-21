@@ -6,6 +6,7 @@ import { SERVICES, getService, getRelated } from "@/data/services";
 import ServiceIcon from "@/components/ServiceIcon";
 import Reveal from "@/components/Reveal";
 import { TopoBackground, MeshBackground } from "@/components/BgPatterns";
+import { ServiceSchema, BreadcrumbSchema } from "@/components/Schema";
 
 export const dynamicParams = false;
 
@@ -17,9 +18,18 @@ export async function generateMetadata(props: PageProps<"/services/[slug]">): Pr
   const { slug } = await props.params;
   const service = getService(slug);
   if (!service) return { title: "Service not found" };
+  const title = `${service.title} | Central Valley`;
+  const desc = service.intro.length > 160 ? service.intro.slice(0, 157) + "..." : service.intro;
   return {
-    title: service.title,
-    description: service.intro,
+    title,
+    description: desc,
+    alternates: { canonical: `/services/${slug}` },
+    openGraph: {
+      title: `${service.title} | XPERT Dairy Systems`,
+      description: desc,
+      url: `/services/${slug}`,
+      type: "website",
+    },
   };
 }
 
@@ -35,6 +45,14 @@ export default async function ServiceDetailPage(props: PageProps<"/services/[slu
 
   return (
     <>
+      <ServiceSchema service={service} />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Services", url: "/services" },
+          { name: service.shortTitle, url: `/services/${service.slug}` },
+        ]}
+      />
       {/* Hero */}
       <section className="relative text-white overflow-hidden">
         <MeshBackground />

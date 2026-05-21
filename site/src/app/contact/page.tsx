@@ -3,16 +3,25 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import { TopoBackground, MeshBackground } from "@/components/BgPatterns";
+import { BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact XPERT Dairy Systems | Tulare, CA Service Request",
   description:
-    "Get in touch with XPERT Dairy Systems Inc. for service, parts, emergency response, or dealer partnership inquiries.",
+    "Request dairy equipment service in California's Central Valley. Call (559) 946-6131 or send a message. Tulare based technicians, emergency response available.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact XPERT Dairy Systems | Tulare, CA",
+    description:
+      "Request dairy equipment service in California's Central Valley. Call (559) 946-6131 or send a message.",
+    url: "/contact",
+  },
 };
 
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "Contact", url: "/contact" }]} />
       <section className="relative text-white overflow-hidden">
         <MeshBackground />
         <TopoBackground variant="dark" opacity={0.05} />

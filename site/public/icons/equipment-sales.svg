@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title">
+  <title id="title">Equipment sales</title>
+  <g fill="none" stroke="#1E5FAE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 22 L80 36 L80 68 L50 82 L20 68 L20 36 Z" fill="#DBEAFE"/>
+    <path d="M20 36 L50 50 L80 36"/>
+    <line x1="50" y1="50" x2="50" y2="82"/>
+    <path d="M35 29 L65 43" stroke="#F59E0B" stroke-width="3.5"/>
+    <path d="M50 22 L50 50" stroke="#F59E0B" stroke-width="3.5" opacity="0.4"/>
+    <rect x="32" y="56" width="20" height="12" fill="white"/>
+    <line x1="36" y1="61" x2="48" y2="61" stroke-width="2"/>
+    <line x1="36" y1="65" x2="44" y2="65" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,21 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Wrench,
-  Cog,
-  Waves,
-  Hammer,
-  Siren,
-  PackageCheck,
-  CalendarCheck,
-  Boxes,
-  ArrowRight,
-  Phone,
-  CheckCircle2,
-  MapPin,
-} from "lucide-react";
+import { ArrowRight, Phone, CheckCircle2, MapPin } from "lucide-react";
 import Logo from "@/components/Logo";
 import Faq from "@/components/Faq";
+import ServiceIcon, { type ServiceIconName } from "@/components/ServiceIcon";
 
 const faqs = [
   {
@@ -44,15 +32,15 @@ const faqs = [
   },
 ];
 
-const services = [
-  { icon: Wrench, title: "Pump Repair & Rebuilds", body: "Full pump rebuilds, gearbox replacements, and wear part service.", href: "/services#pump-repair" },
-  { icon: Cog, title: "Separator Maintenance", body: "Roller, screen, and drive service to recover separator throughput.", href: "/services#separator-maintenance" },
-  { icon: Waves, title: "Agitator Service", body: "Lagoon and pit agitator repair, gearbox and propeller work.", href: "/services#agitator-service" },
-  { icon: Hammer, title: "Fabrication", body: "Custom brackets, manifolds, mounts, and field welding.", href: "/services#fabrication" },
-  { icon: Siren, title: "Emergency Service", body: "Fast response calls when dairy equipment goes down.", href: "/services#emergency-service" },
-  { icon: PackageCheck, title: "Installation & Startup", body: "New equipment installation, commissioning, and operator orientation.", href: "/services#installation" },
-  { icon: CalendarCheck, title: "Preventative Maintenance", body: "Scheduled inspections that catch wear before downtime.", href: "/services#preventative-maintenance" },
-  { icon: Boxes, title: "Parts & Warranty Support", body: "Stocked wear parts, manufacturer warranty coordination.", href: "/services#parts-warranty" },
+const services: { icon: ServiceIconName; title: string; body: string; href: string }[] = [
+  { icon: "pump-repair", title: "Pump Repair & Rebuilds", body: "Full pump rebuilds, gearbox replacements, and wear part service.", href: "/services#pump-repair" },
+  { icon: "separator", title: "Separator Maintenance", body: "Roller, screen, and drive service to recover separator throughput.", href: "/services#separator-maintenance" },
+  { icon: "agitator", title: "Agitator Service", body: "Lagoon and pit agitator repair, gearbox and propeller work.", href: "/services#agitator-service" },
+  { icon: "fabrication", title: "Fabrication", body: "Custom brackets, manifolds, mounts, and field welding.", href: "/services#fabrication" },
+  { icon: "emergency-service", title: "Emergency Service", body: "Fast response calls when dairy equipment goes down.", href: "/services#emergency-service" },
+  { icon: "installation", title: "Installation & Startup", body: "New equipment installation, commissioning, and operator orientation.", href: "/services#installation" },
+  { icon: "preventative-maintenance", title: "Preventative Maintenance", body: "Scheduled inspections that catch wear before downtime.", href: "/services#preventative-maintenance" },
+  { icon: "parts-stocking", title: "Parts & Warranty Support", body: "Stocked wear parts, manufacturer warranty coordination.", href: "/services#parts-warranty" },
 ];
 
 const leadership = [
@@ -184,16 +172,14 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {services.map(({ icon: Icon, title, body, href }) => (
+            {services.map(({ icon, title, body, href }) => (
               <Link
                 key={title}
                 href={href}
                 className="group bg-white border border-xds-line rounded-xl p-6 hover:border-xds-blue hover:shadow-lg hover:-translate-y-0.5 transition-all"
               >
-                <div className="w-11 h-11 rounded-lg bg-xds-blue/10 flex items-center justify-center text-xds-blue group-hover:bg-xds-blue group-hover:text-white transition-colors">
-                  <Icon size={22} />
-                </div>
-                <h3 className="mt-5 font-display font-bold text-lg text-xds-ink">{title}</h3>
+                <ServiceIcon name={icon} size={56} />
+                <h3 className="mt-4 font-display font-bold text-lg text-xds-ink">{title}</h3>
                 <p className="mt-2 text-sm text-xds-slate leading-relaxed">{body}</p>
                 <div className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-xds-blue">
                   Learn more

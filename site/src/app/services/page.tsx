@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  Wrench,
-  Cog,
-  Waves,
-  Hammer,
-  Siren,
-  PackageCheck,
-  CalendarCheck,
-  Boxes,
-  Phone,
-  ArrowRight,
-} from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
+import ServiceIcon, { type ServiceIconName } from "@/components/ServiceIcon";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -19,10 +9,10 @@ export const metadata: Metadata = {
     "Dairy equipment services: pump repair, separator maintenance, agitator service, fabrication, emergency response, installation, preventative maintenance, and parts support across California's Central Valley.",
 };
 
-const services = [
+const services: { id: string; icon: ServiceIconName; title: string; intro: string; bullets: string[] }[] = [
   {
     id: "pump-repair",
-    icon: Wrench,
+    icon: "pump-repair",
     title: "Manure Pump Repair & Rebuilds",
     intro: "Full pump rebuilds, gearbox replacements, and wear part service from technicians who work on these systems daily.",
     bullets: [
@@ -34,7 +24,7 @@ const services = [
   },
   {
     id: "separator-maintenance",
-    icon: Cog,
+    icon: "separator",
     title: "Separator Maintenance",
     intro: "Get separator throughput back where it should be with roller, screen, and drive service.",
     bullets: [
@@ -46,7 +36,7 @@ const services = [
   },
   {
     id: "agitator-service",
-    icon: Waves,
+    icon: "agitator",
     title: "Agitator Service",
     intro: "Lagoon and pit agitator repair from gearbox to propeller, performed on site whenever possible.",
     bullets: [
@@ -58,7 +48,7 @@ const services = [
   },
   {
     id: "fabrication",
-    icon: Hammer,
+    icon: "fabrication",
     title: "Fabrication",
     intro: "When the factory part is back ordered or doesn't quite fit, we build what you need.",
     bullets: [
@@ -70,7 +60,7 @@ const services = [
   },
   {
     id: "emergency-service",
-    icon: Siren,
+    icon: "emergency-service",
     title: "Emergency Service",
     intro: "Equipment down? Call us. We will coordinate the fastest response we can across the Central Valley.",
     bullets: [
@@ -82,7 +72,7 @@ const services = [
   },
   {
     id: "installation",
-    icon: PackageCheck,
+    icon: "installation",
     title: "Installation & Startup Assistance",
     intro: "New equipment commissioned and started right, with operator orientation included.",
     bullets: [
@@ -94,7 +84,7 @@ const services = [
   },
   {
     id: "preventative-maintenance",
-    icon: CalendarCheck,
+    icon: "preventative-maintenance",
     title: "Preventative Maintenance Programs",
     intro: "Catch wear before it becomes downtime with scheduled inspections and a documented service history.",
     bullets: [
@@ -106,7 +96,7 @@ const services = [
   },
   {
     id: "parts-warranty",
-    icon: Boxes,
+    icon: "parts-stocking",
     title: "Parts Stocking & Warranty Support",
     intro: "Wear parts in stock for fast turnaround, manufacturer warranty coordinated through XDS.",
     bullets: [
@@ -152,16 +142,14 @@ export default function ServicesPage() {
           </nav>
 
           <div className="space-y-16">
-            {services.map(({ id, icon: Icon, title, intro, bullets }, idx) => (
+            {services.map(({ id, icon, title, intro, bullets }, idx) => (
               <article
                 key={id}
                 id={id}
                 className="scroll-mt-24 grid lg:grid-cols-12 gap-8 lg:gap-12 pb-16 border-b border-xds-line last:border-b-0 last:pb-0"
               >
                 <div className="lg:col-span-4">
-                  <div className="w-14 h-14 rounded-xl bg-xds-blue/10 flex items-center justify-center text-xds-blue">
-                    <Icon size={28} />
-                  </div>
+                  <ServiceIcon name={icon} size={72} />
                   <div className="mt-4 text-xs font-bold tracking-wider uppercase text-xds-blue">
                     {String(idx + 1).padStart(2, "0")} of {String(services.length).padStart(2, "0")}
                   </div>

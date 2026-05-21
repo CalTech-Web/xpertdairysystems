@@ -1,16 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  Handshake,
-  Wrench,
-  TrendingUp,
-  Users,
-  ShieldCheck,
-  Truck,
-  ArrowRight,
-  Phone,
-  Mail,
-} from "lucide-react";
+import { Handshake, ArrowRight, Phone, Mail } from "lucide-react";
+import ServiceIcon, { type ServiceIconName } from "@/components/ServiceIcon";
 
 export const metadata: Metadata = {
   title: "Dealer & Service Partners",
@@ -18,13 +9,13 @@ export const metadata: Metadata = {
     "Long term dealer and service partnerships for dairy equipment manufacturers in California's Central Valley.",
 };
 
-const offers = [
-  { icon: Wrench, title: "Equipment Sales", body: "Carrying and selling manufacturer products direct to dairy operators we already serve." },
-  { icon: Wrench, title: "Pump & Agitator Repairs", body: "Daily field experience with rebuilds, gearbox replacements, and seal service." },
-  { icon: Truck, title: "Parts Stocking & Support", body: "Wear parts on hand for fast turnaround. Genuine manufacturer parts coordinated through XDS." },
-  { icon: ShieldCheck, title: "Emergency Service", body: "Fast response coverage so manufacturers know their customers are taken care of." },
-  { icon: Users, title: "Installation & Startup", body: "Proper commissioning, operator orientation, and documentation handoff." },
-  { icon: TrendingUp, title: "Preventative Maintenance", body: "Scheduled programs that extend equipment life and demonstrate ROI to the dairy." },
+const offers: { icon: ServiceIconName; title: string; body: string }[] = [
+  { icon: "equipment-sales", title: "Equipment Sales", body: "Carrying and selling manufacturer products direct to dairy operators we already serve." },
+  { icon: "pump-repair", title: "Pump & Agitator Repairs", body: "Daily field experience with rebuilds, gearbox replacements, and seal service." },
+  { icon: "parts-stocking", title: "Parts Stocking & Support", body: "Wear parts on hand for fast turnaround. Genuine manufacturer parts coordinated through XDS." },
+  { icon: "emergency-service", title: "Emergency Service", body: "Fast response coverage so manufacturers know their customers are taken care of." },
+  { icon: "installation", title: "Installation & Startup", body: "Proper commissioning, operator orientation, and documentation handoff." },
+  { icon: "preventative-maintenance", title: "Preventative Maintenance", body: "Scheduled programs that extend equipment life and demonstrate ROI to the dairy." },
 ];
 
 const benefits = [
@@ -102,12 +93,10 @@ export default function DealerPartnersPage() {
             </h2>
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {offers.map(({ icon: Icon, title, body }) => (
+            {offers.map(({ icon, title, body }) => (
               <div key={title} className="bg-white border border-xds-line rounded-xl p-6">
-                <div className="w-11 h-11 rounded-lg bg-xds-blue/10 flex items-center justify-center text-xds-blue">
-                  <Icon size={22} />
-                </div>
-                <h3 className="mt-5 font-display font-bold text-lg text-xds-ink">{title}</h3>
+                <ServiceIcon name={icon} size={56} />
+                <h3 className="mt-4 font-display font-bold text-lg text-xds-ink">{title}</h3>
                 <p className="mt-2 text-sm text-xds-slate leading-relaxed">{body}</p>
               </div>
             ))}

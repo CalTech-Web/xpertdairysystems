@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title">
+  <title id="title">Agitator service</title>
+  <g fill="none" stroke="#1E5FAE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="34" y="10" width="32" height="22" rx="2" fill="#DBEAFE"/>
+    <line x1="42" y1="16" x2="42" y2="26"/>
+    <line x1="50" y1="16" x2="50" y2="26"/>
+    <line x1="58" y1="16" x2="58" y2="26"/>
+    <line x1="38" y1="32" x2="62" y2="32"/>
+    <line x1="50" y1="32" x2="50" y2="70"/>
+    <line x1="50" y1="70" x2="28" y2="84"/>
+    <line x1="50" y1="70" x2="72" y2="84"/>
+    <line x1="50" y1="70" x2="32" y2="58"/>
+    <line x1="50" y1="70" x2="68" y2="58"/>
+    <circle cx="50" cy="70" r="4" fill="#1E5FAE"/>
+    <circle cx="28" cy="84" r="2.5" fill="#1E5FAE" stroke="none"/>
+    <circle cx="72" cy="84" r="2.5" fill="#1E5FAE" stroke="none"/>
+    <circle cx="32" cy="58" r="2.5" fill="#1E5FAE" stroke="none"/>
+    <circle cx="68" cy="58" r="2.5" fill="#1E5FAE" stroke="none"/>
+  </g>
+</svg>

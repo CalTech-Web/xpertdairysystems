@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
+import ServiceIcon from "@/components/ServiceIcon";
 
 export const metadata: Metadata = {
   title: "About XPERT Dairy Systems",
@@ -134,18 +135,27 @@ export default function AboutPage() {
             <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">The people behind XDS</h2>
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {leadership.map((p) => (
-              <div key={p.name} className="border border-xds-line rounded-xl p-8 flex gap-6">
-                <div className="w-16 h-16 rounded-full bg-xds-blue/10 flex items-center justify-center text-xds-blue font-display font-extrabold text-xl shrink-0">
-                  {p.name.split(" ").map((n) => n[0]).join("")}
+            {leadership.map((p) => {
+              const isSafety = p.role.toLowerCase().includes("safety");
+              return (
+                <div key={p.name} className="border border-xds-line rounded-xl p-8 flex gap-6">
+                  {isSafety ? (
+                    <div className="shrink-0">
+                      <ServiceIcon name="safety-compliance" size={64} />
+                    </div>
+                  ) : (
+                    <div className="w-16 h-16 rounded-full bg-xds-blue/10 flex items-center justify-center text-xds-blue font-display font-extrabold text-xl shrink-0">
+                      {p.name.split(" ").map((n) => n[0]).join("")}
+                    </div>
+                  )}
+                  <div>
+                    <h3 className="font-display font-bold text-xl text-xds-ink">{p.name}</h3>
+                    <div className="text-xs font-semibold uppercase tracking-wider text-xds-blue mt-1">{p.role}</div>
+                    <p className="mt-3 text-sm text-xds-slate leading-relaxed">{p.bio}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-display font-bold text-xl text-xds-ink">{p.name}</h3>
-                  <div className="text-xs font-semibold uppercase tracking-wider text-xds-blue mt-1">{p.role}</div>
-                  <p className="mt-3 text-sm text-xds-slate leading-relaxed">{p.bio}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

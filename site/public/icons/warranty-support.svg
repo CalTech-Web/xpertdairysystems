@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title">
+  <title id="title">Warranty and support</title>
+  <g fill="none" stroke="#1E5FAE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 10 L82 22 Q82 60 50 88 Q18 60 18 22 Z" fill="#DBEAFE"/>
+    <path d="M50 18 L74 27 Q74 58 50 80 Q26 58 26 27 Z" fill="none" stroke-width="1.5" opacity="0.5"/>
+    <path d="M34 50 L46 62 L66 38" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

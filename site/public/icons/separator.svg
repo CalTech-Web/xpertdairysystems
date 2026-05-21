@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title">
+  <title id="title">Separator maintenance</title>
+  <g fill="none" stroke="#1E5FAE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="50" y1="10" x2="50" y2="22"/>
+    <path d="M40 14 L60 14" stroke-width="3"/>
+    <path d="M20 22 Q12 22 12 32 L12 70 Q12 80 22 80 L78 80 Q88 80 88 70 L88 32 Q88 22 78 22 Z" fill="#DBEAFE"/>
+    <line x1="20" y1="40" x2="80" y2="40" stroke-width="2"/>
+    <line x1="20" y1="50" x2="80" y2="50" stroke-width="2"/>
+    <line x1="20" y1="60" x2="80" y2="60" stroke-width="2"/>
+    <path d="M88 56 L96 56" stroke-width="3"/>
+    <path d="M50 80 L50 92"/>
+    <line x1="42" y1="92" x2="58" y2="92"/>
+  </g>
+</svg>

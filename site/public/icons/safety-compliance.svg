@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title">
+  <title id="title">Safety compliance</title>
+  <g fill="none" stroke="#1E5FAE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 64 Q22 28 50 28 Q78 28 78 64 Z" fill="#DBEAFE"/>
+    <path d="M30 60 Q30 36 50 30" stroke-width="2.5"/>
+    <path d="M70 60 Q70 36 50 30" stroke-width="2.5"/>
+    <line x1="50" y1="30" x2="50" y2="64"/>
+    <path d="M12 64 L88 64 L88 72 L12 72 Z" fill="#1E5FAE"/>
+    <rect x="44" y="42" width="12" height="14" rx="1" fill="white"/>
+    <path d="M48 48 L50 51 L54 45" stroke="#1E5FAE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>

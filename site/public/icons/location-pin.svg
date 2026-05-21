@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title">
+  <title id="title">Central Valley location</title>
+  <g stroke="#1E5FAE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 10 Q74 10 74 36 Q74 58 50 90 Q26 58 26 36 Q26 10 50 10 Z" fill="#1E5FAE"/>
+    <circle cx="50" cy="36" r="10" fill="white" stroke="white"/>
+    <circle cx="50" cy="36" r="4" fill="#F59E0B" stroke="#F59E0B"/>
+  </g>
+</svg>

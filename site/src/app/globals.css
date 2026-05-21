@@ -222,6 +222,25 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Phone "ring" animation — gentle inviting wobble every few seconds */
+.phone-ring {
+  display: inline-flex;
+  animation: phone-ring 4s ease-in-out infinite;
+  transform-origin: 50% 80%;
+}
+@keyframes phone-ring {
+  0%, 70%, 100% { transform: rotate(0); }
+  74% { transform: rotate(-14deg); }
+  78% { transform: rotate(12deg); }
+  82% { transform: rotate(-10deg); }
+  86% { transform: rotate(8deg); }
+  90% { transform: rotate(-6deg); }
+  94% { transform: rotate(3deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .phone-ring { animation: none; }
+}
+
 /* Live pulse (24/7 indicators) */
 .live-dot {
   position: relative;

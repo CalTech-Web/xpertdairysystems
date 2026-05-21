@@ -17,14 +17,14 @@ const faqs = [
 ];
 
 const services: { icon: ServiceIconName; title: string; body: string; href: string }[] = [
-  { icon: "pump-repair", title: "Pump Repair & Rebuilds", body: "Full pump rebuilds, gearbox replacements, and wear part service.", href: "/services#pump-repair" },
-  { icon: "separator", title: "Separator Maintenance", body: "Roller, screen, and drive service to recover separator throughput.", href: "/services#separator-maintenance" },
-  { icon: "agitator", title: "Agitator Service", body: "Lagoon and pit agitator repair, gearbox and propeller work.", href: "/services#agitator-service" },
-  { icon: "fabrication", title: "Fabrication", body: "Custom brackets, manifolds, mounts, and field welding.", href: "/services#fabrication" },
-  { icon: "emergency-service", title: "Emergency Service", body: "Fast response calls when dairy equipment goes down.", href: "/services#emergency-service" },
-  { icon: "installation", title: "Installation & Startup", body: "New equipment installation, commissioning, and operator orientation.", href: "/services#installation" },
-  { icon: "preventative-maintenance", title: "Preventative Maintenance", body: "Scheduled inspections that catch wear before downtime.", href: "/services#preventative-maintenance" },
-  { icon: "parts-stocking", title: "Parts & Warranty Support", body: "Stocked wear parts, manufacturer warranty coordination.", href: "/services#parts-warranty" },
+  { icon: "pump-repair", title: "Pump Repair & Rebuilds", body: "Full pump rebuilds, gearbox replacements, and wear part service.", href: "/services/pump-repair" },
+  { icon: "separator", title: "Separator Maintenance", body: "Roller, screen, and drive service to recover separator throughput.", href: "/services/separator-maintenance" },
+  { icon: "agitator", title: "Agitator Service", body: "Lagoon and pit agitator repair, gearbox and propeller work.", href: "/services/agitator-service" },
+  { icon: "fabrication", title: "Fabrication", body: "Custom brackets, manifolds, mounts, and field welding.", href: "/services/fabrication" },
+  { icon: "emergency-service", title: "Emergency Service", body: "Fast response calls when dairy equipment goes down.", href: "/services/emergency-service" },
+  { icon: "installation", title: "Installation & Startup", body: "New equipment installation, commissioning, and operator orientation.", href: "/services/installation" },
+  { icon: "preventative-maintenance", title: "Preventative Maintenance", body: "Scheduled inspections that catch wear before downtime.", href: "/services/preventative-maintenance" },
+  { icon: "parts-stocking", title: "Parts & Warranty Support", body: "Stocked wear parts, manufacturer warranty coordination.", href: "/services/parts-warranty" },
 ];
 
 const leadership = [

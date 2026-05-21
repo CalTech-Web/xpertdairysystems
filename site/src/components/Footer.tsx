@@ -4,14 +4,14 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { MeshBackground, TopoBackground } from "./BgPatterns";
 
 const services = [
-  { label: "Pump Repair", href: "/services#pump-repair" },
-  { label: "Separator Maintenance", href: "/services#separator-maintenance" },
-  { label: "Agitator Service", href: "/services#agitator-service" },
-  { label: "Fabrication", href: "/services#fabrication" },
-  { label: "Emergency Service", href: "/services#emergency-service" },
-  { label: "Installation", href: "/services#installation" },
-  { label: "Preventative Maintenance", href: "/services#preventative-maintenance" },
-  { label: "Parts & Warranty", href: "/services#parts-warranty" },
+  { label: "Pump Repair", href: "/services/pump-repair" },
+  { label: "Separator Maintenance", href: "/services/separator-maintenance" },
+  { label: "Agitator Service", href: "/services/agitator-service" },
+  { label: "Fabrication", href: "/services/fabrication" },
+  { label: "Emergency Service", href: "/services/emergency-service" },
+  { label: "Installation", href: "/services/installation" },
+  { label: "Preventative Maintenance", href: "/services/preventative-maintenance" },
+  { label: "Parts & Warranty", href: "/services/parts-warranty" },
 ];
 
 const company = [

@@ -292,15 +292,51 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--color-xds-blue);
 }
 
-/* Icon container — tinted circle for service icons */
+/* Icon container — tinted square with depth + brand-tinted hairline undercut */
 .icon-bubble {
+  position: relative;
   width: 60px;
   height: 60px;
-  border-radius: 999px;
-  background: var(--color-xds-blue-tint);
+  border-radius: var(--radius-xds-md);
+  background: linear-gradient(135deg, #F0F7FF 0%, #DBEAFE 100%);
+  border: 1px solid #C7DCFA;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-shadow:
+    0 1px 0 0 #BFDBFE,
+    0 4px 10px -2px rgba(30, 95, 174, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+.icon-bubble::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), transparent 70%);
+  pointer-events: none;
+}
+.card-lift:hover .icon-bubble {
+  transform: scale(1.05) rotate(-2deg);
+  border-color: var(--color-xds-blue);
+  box-shadow:
+    0 1px 0 0 var(--color-xds-blue),
+    0 14px 26px -10px rgba(30, 95, 174, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Dark variant for use on dark backgrounds */
+.icon-bubble.on-dark {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(30, 95, 174, 0.25) 100%);
+  border-color: rgba(147, 197, 253, 0.25);
+  box-shadow:
+    0 1px 0 0 rgba(30, 95, 174, 0.4),
+    0 4px 10px -2px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 /* Soft cow-card glow */

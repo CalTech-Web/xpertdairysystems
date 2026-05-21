@@ -101,6 +101,7 @@ export default function Home() {
                     sizes="(min-width: 1024px) 480px, 100vw"
                     className="object-cover opacity-95"
                     priority
+                    fetchPriority="high"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-xds-blue-deepest/40 to-xds-blue-deepest" />
                   <div className="absolute top-5 left-5 right-5 flex items-center justify-between">

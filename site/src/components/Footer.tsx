@@ -105,9 +105,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} XPERT Dairy Systems Inc. All Rights Reserved.
           </p>
           <p className="text-xs text-white/50">
-            Powered by{" "}
+            Built by{" "}
             <a href="https://caltechweb.com" className="text-white/70 hover:text-white link-underline">
-              Caltechweb
+              CalTech Web
             </a>
           </p>
         </div>

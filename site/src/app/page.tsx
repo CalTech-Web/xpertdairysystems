@@ -142,14 +142,22 @@ export default function Home() {
         <div className="grad-divider" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
           <Reveal>
-            <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-xds-line">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 lg:gap-y-0">
               {[
                 { stat: "Daily", label: "Onsite at dairies across the valley" },
                 { stat: "24/7", label: "Emergency call coordination" },
                 { stat: "8", label: "Core service offerings" },
                 { stat: "Tulare", label: "Locally owned and operated" },
               ].map((b, idx) => (
-                <div key={b.label} className={`${idx === 0 ? "pl-0" : "pl-6 lg:pl-8"} pr-6 lg:pr-8 first:border-l-0`}>
+                <div
+                  key={b.label}
+                  className={`
+                    px-4 lg:px-6
+                    ${idx % 2 === 1 ? "border-l" : ""}
+                    ${idx >= 2 ? "border-t pt-6 lg:border-t-0 lg:pt-0" : ""}
+                    lg:border-l lg:first:border-l-0
+                  `}
+                >
                   <div className="inline-flex items-center gap-2">
                     <div className="font-display font-extrabold text-3xl lg:text-4xl text-xds-ink">{b.stat}</div>
                     <span className="w-1.5 h-1.5 rounded-full bg-xds-amber" />

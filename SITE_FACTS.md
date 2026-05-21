@@ -1,7 +1,9 @@
 # XPERT Dairy Systems Inc. - Master Site Facts Document
 > Compiled for XPERT Dairy Systems Inc. - May 2026 - For use in site development and content work
 
-Source materials: branded marketing flyer (`assets/source-docs/xds-marketing-flyer.jpg`), dealer & service partner presentation (`assets/source-docs/XDS_Dealer_Packet.pdf`), two field videos (`assets/video/dairy-field-1.MOV`, `dairy-field-2.MOV`). No existing website to research.
+Source materials: branded marketing flyer (`assets/source-docs/xds-marketing-flyer.jpg`) and dealer & service partner presentation (`assets/source-docs/XDS_Dealer_Packet.pdf`). No existing website to research.
+
+> Two .MOV files were initially included in the file dump but turned out to be portfolio samples from a marketing consultant (a coffee shop promo and a spin class shoot), not XDS dairy field footage. They have been removed. **Real dairy field photography or video is still needed** to replace placeholder hero/section imagery.
 
 ---
 

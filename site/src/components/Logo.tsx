@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 
-type Variant = "dark" | "light" | "mono-dark" | "mono-light";
+type Variant = "dark" | "light";
 
 interface LogoProps {
   variant?: Variant;
@@ -10,9 +11,9 @@ interface LogoProps {
 }
 
 const sizeMap = {
-  sm: { mark: 32, text: "text-lg" },
-  md: { mark: 44, text: "text-xl" },
-  lg: { mark: 64, text: "text-3xl" },
+  sm: { mark: 32, gap: "gap-2", primary: "text-base", secondary: "text-[0.55em]" },
+  md: { mark: 44, gap: "gap-3", primary: "text-xl", secondary: "text-[0.55em]" },
+  lg: { mark: 64, gap: "gap-3", primary: "text-3xl", secondary: "text-[0.55em]" },
 } as const;
 
 export default function Logo({
@@ -21,39 +22,31 @@ export default function Logo({
   size = "md",
   href = "/",
 }: LogoProps) {
-  const isLight = variant === "light" || variant === "mono-light";
-  const blueFill = variant === "mono-dark" ? "#0A0A0A" : variant === "mono-light" ? "#FFFFFF" : "#1E40AF";
-  const tailStroke = isLight ? "#FFFFFF" : "#0A0A0A";
-  const wordmarkColor = isLight ? "text-white" : "text-xds-ink";
+  const isLight = variant === "light";
+  const xpertColor = isLight ? "text-white" : "text-xds-ink";
+  const dairyColor = isLight ? "text-white/90" : "text-xds-ink";
+  const systemsColor = isLight ? "text-xds-blue-light" : "text-xds-blue";
 
-  const { mark, text } = sizeMap[size];
+  const { mark, gap, primary, secondary } = sizeMap[size];
 
   const content = (
-    <span className="inline-flex items-center gap-3">
-      <svg
+    <span className={`inline-flex items-center ${gap}`}>
+      <Image
+        src="/images/xds-mark-transparent.png"
+        alt=""
         width={mark}
         height={mark}
-        viewBox="0 0 64 64"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        <path
-          d="M8 8 L26 32 L8 56 H20 L32 40 L44 56 H56 L38 32 L56 8 H44 L32 24 L20 8 Z"
-          fill={blueFill}
-        />
-        <path
-          d="M50 14 C58 22, 62 34, 56 46 C52 53, 44 56, 38 54"
-          stroke={tailStroke}
-          strokeWidth="3"
-          strokeLinecap="round"
-          fill="none"
-        />
-      </svg>
+        priority
+        className="shrink-0"
+        style={{ width: mark, height: "auto" }}
+      />
       {showWordmark && (
-        <span className={`flex flex-col leading-[0.9] font-display font-extrabold tracking-tight ${wordmarkColor} ${text}`}>
-          <span>XPERT</span>
-          <span className="text-[0.6em] font-bold tracking-wider opacity-90">DAIRY SYSTEMS</span>
+        <span className="flex flex-col leading-[0.95] font-display font-extrabold tracking-tight">
+          <span className={`${primary} ${xpertColor}`}>XPERT</span>
+          <span className={`${secondary} ${primary} font-bold tracking-wider`}>
+            <span className={dairyColor}>DAIRY </span>
+            <span className={systemsColor}>SYSTEMS</span>
+          </span>
         </span>
       )}
     </span>

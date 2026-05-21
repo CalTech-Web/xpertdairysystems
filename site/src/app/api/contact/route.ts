@@ -23,17 +23,31 @@ export async function POST(request: Request) {
   }
 
   try {
+    const subject = (payload.subject || "General Inquiry").trim();
+    const phone = (payload.phone || "").trim();
+    const company = (payload.company || "").trim();
+    const composedMessage = [
+      `Subject: ${subject}`,
+      company && `Company: ${company}`,
+      phone && `Phone: ${phone}`,
+      "",
+      message,
+    ].filter(Boolean).join("\n");
+
     const res = await fetch(FORMS_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Origin: "https://xpertdairysystems.vercel.app",
+      },
       body: JSON.stringify({
-        siteKey: SITE_KEY,
+        site: SITE_KEY,
         name,
         email,
-        phone: payload.phone || "",
-        company: payload.company || "",
-        subject: payload.subject || "General Inquiry",
-        message,
+        phone,
+        subject,
+        source: "contact",
+        message: composedMessage,
       }),
     });
     if (!res.ok) {

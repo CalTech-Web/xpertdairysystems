@@ -54,7 +54,7 @@ export default function Logo({
 
   if (!href) return content;
   return (
-    <Link href={href} className="inline-flex items-center" aria-label="XPERT Dairy Systems home">
+    <Link href={href} className="inline-flex items-center">
       {content}
     </Link>
   );

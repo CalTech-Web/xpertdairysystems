@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-sm uppercase tracking-widest text-white mb-5">Services</h4>
+            <h3 className="font-display font-bold text-sm uppercase tracking-widest text-white mb-5">Services</h3>
             <ul className="space-y-2">
               {services.map((s) => (
                 <li key={s.href}>
@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-sm uppercase tracking-widest text-white mb-5">Company</h4>
+            <h3 className="font-display font-bold text-sm uppercase tracking-widest text-white mb-5">Company</h3>
             <ul className="space-y-2">
               {company.map((c) => (
                 <li key={c.href}>
@@ -90,7 +90,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-sm uppercase tracking-widest text-white mb-5">Service Area</h4>
+            <h3 className="font-display font-bold text-sm uppercase tracking-widest text-white mb-5">Service Area</h3>
             <p className="text-sm text-white/70 leading-relaxed">
               Based in Tulare, CA. Serving dairy operations throughout California's Central Valley.
             </p>

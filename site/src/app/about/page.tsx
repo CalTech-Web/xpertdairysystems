@@ -201,7 +201,7 @@ export default function AboutPage() {
               Reach out for service, parts, or a manufacturer partnership conversation.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <a href="tel:5599466131" className="btn-ghost"><Phone size={18} /> (559) 946-6131</a>
+              <a href="tel:5599466131" className="btn-ghost"><span className="phone-ring"><Phone size={18} /></span> (559) 946-6131</a>
               <Link href="/contact" className="btn-primary">Send a Message <ArrowRight size={18} /></Link>
             </div>
           </Reveal>

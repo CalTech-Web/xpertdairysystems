@@ -50,7 +50,7 @@ export default function Home() {
                   <span className="live-dot" />
                   <span>Central Valley Dairy Service</span>
                   <span className="h-3 w-px bg-white/20" />
-                  <Phone size={12} className="opacity-70" />
+                  <span className="phone-ring opacity-70"><Phone size={12} /></span>
                   <a href="tel:5599466131" className="hover:text-white">(559) 946-6131</a>
                 </div>
               </Reveal>
@@ -75,7 +75,7 @@ export default function Home() {
                     <ArrowRight size={18} />
                   </Link>
                   <a href="tel:5599466131" className="btn-ghost text-base">
-                    <Phone size={18} />
+                    <span className="phone-ring"><Phone size={18} /></span>
                     (559) 946-6131
                   </a>
                 </div>
@@ -116,7 +116,7 @@ export default function Home() {
                   </p>
                   <div className="mt-7 space-y-4 text-sm">
                     <div className="flex items-start gap-3">
-                      <Phone size={18} className="text-[#93C5FD] mt-0.5" />
+                      <span className="phone-ring text-[#93C5FD] mt-0.5"><Phone size={18} /></span>
                       <div>
                         <div className="text-white/50 text-xs uppercase tracking-wider">Phone</div>
                         <a href="tel:5599466131" className="text-white font-semibold link-underline">(559) 946-6131</a>
@@ -380,7 +380,7 @@ export default function Home() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4 justify-center">
                 <a href="tel:5599466131" className="btn-dark">
-                  <Phone size={18} />
+                  <span className="phone-ring"><Phone size={18} /></span>
                   (559) 946-6131
                 </a>
                 <Link href="/contact" className="btn-primary">

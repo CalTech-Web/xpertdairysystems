@@ -45,7 +45,7 @@ export default function Footer() {
             </p>
             <div className="mt-6 space-y-3 text-sm">
               <a href="tel:5599466131" className="flex items-center gap-3 text-white/90 hover:text-white">
-                <Phone size={16} className="text-[#93C5FD]" />
+                <span className="phone-ring text-[#93C5FD]"><Phone size={16} /></span>
                 (559) 946-6131
               </a>
               <a href="mailto:Xpertdairy@gmail.com" className="flex items-center gap-3 text-white/90 hover:text-white">

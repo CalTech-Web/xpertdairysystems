@@ -73,10 +73,13 @@ function InfoCard({
   body: React.ReactNode;
   hint?: string;
 }) {
+  const isPhone = title.toLowerCase() === "phone";
   return (
     <div className="bg-xds-soft border border-xds-line rounded-xl p-6">
       <span className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-xds-blue-tint">
-        <Icon size={20} className="text-xds-blue" />
+        <span className={isPhone ? "phone-ring text-xds-blue" : "text-xds-blue"}>
+          <Icon size={20} />
+        </span>
       </span>
       <h3 className="mt-4 font-display font-bold text-xs text-xds-ink uppercase tracking-wider">
         {title}

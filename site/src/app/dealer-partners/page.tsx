@@ -51,7 +51,7 @@ export default function DealerPartnersPage() {
                   <Mail size={18} /> Email a Partnership Inquiry
                 </a>
                 <a href="tel:5599466131" className="btn-ghost">
-                  <Phone size={18} /> (559) 946-6131
+                  <span className="phone-ring"><Phone size={18} /></span> (559) 946-6131
                 </a>
               </div>
             </div>

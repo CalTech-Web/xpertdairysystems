@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Wrench,
   Cog,
@@ -14,6 +15,34 @@ import {
   MapPin,
 } from "lucide-react";
 import Logo from "@/components/Logo";
+import Faq from "@/components/Faq";
+
+const faqs = [
+  {
+    q: "What areas does XDS serve?",
+    a: "We serve dairy operations throughout California's Central Valley from our base in Tulare. If you operate a dairy in the valley, we can get a technician to you.",
+  },
+  {
+    q: "Do you handle emergency calls when equipment goes down?",
+    a: "Yes. Emergency service is one of our core offerings. Call (559) 946-6131 and we will coordinate the fastest response we can.",
+  },
+  {
+    q: "What equipment do you work on?",
+    a: "Manure pumps, agitators, separators, gearboxes, and related dairy equipment. We do full rebuilds, parts replacement, and fabrication work when factory parts are not available.",
+  },
+  {
+    q: "Can you install new equipment from manufacturers we already work with?",
+    a: "Yes. Installation and startup assistance is part of what we do, and we are actively building dealer partnerships with manufacturers so we can also source the equipment for you.",
+  },
+  {
+    q: "Do you offer preventative maintenance contracts?",
+    a: "Yes. Scheduled maintenance programs let us catch wear before it becomes downtime, and we document service history for each piece of equipment.",
+  },
+  {
+    q: "Are you a sales only dealer?",
+    a: "No. The XDS team is onsite at dairies every week doing the actual repair, fabrication, and service work. We sell equipment as part of our manufacturer partnerships, but our identity is field service.",
+  },
+];
 
 const services = [
   { icon: Wrench, title: "Pump Repair & Rebuilds", body: "Full pump rebuilds, gearbox replacements, and wear part service.", href: "/services#pump-repair" },
@@ -77,29 +106,42 @@ export default function Home() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-8 lg:p-10">
-                <div className="flex items-center justify-between border-b border-white/10 pb-6">
-                  <Logo variant="light" size="md" />
-                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/50">EST. CENTRAL VALLEY</span>
-                </div>
-                <p className="mt-6 tagline-lockup text-xl text-white">
-                  Xpert Solutions.
-                  <br />
-                  Stronger Dairies.
-                </p>
-                <div className="mt-8 space-y-4 text-sm">
-                  <div className="flex items-start gap-3">
-                    <Phone size={18} className="text-xds-blue-light mt-0.5" />
-                    <div>
-                      <div className="text-white/50 text-xs uppercase tracking-wider">Phone</div>
-                      <a href="tel:5599466131" className="text-white font-semibold hover:text-xds-blue-light">(559) 946-6131</a>
-                    </div>
+              <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur overflow-hidden">
+                <div className="relative h-56 sm:h-64 overflow-hidden">
+                  <Image
+                    src="/images/cow-photo-bw.jpg"
+                    alt="Dairy cow in a Central Valley operation"
+                    fill
+                    sizes="(min-width: 1024px) 480px, 100vw"
+                    className="object-cover opacity-90"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-xds-ink/40 to-xds-ink" />
+                  <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
+                    <Logo variant="light" size="sm" />
+                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/70 bg-xds-ink/60 backdrop-blur rounded px-2 py-1">EST. CENTRAL VALLEY</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <MapPin size={18} className="text-xds-blue-light mt-0.5" />
-                    <div>
-                      <div className="text-white/50 text-xs uppercase tracking-wider">Headquarters</div>
-                      <div className="text-white font-semibold">377 S. Oakmore St., Tulare, CA 93274</div>
+                </div>
+                <div className="p-8 lg:p-10 pt-2">
+                  <p className="tagline-lockup text-xl text-white">
+                    Xpert Solutions.
+                    <br />
+                    Stronger Dairies.
+                  </p>
+                  <div className="mt-7 space-y-4 text-sm">
+                    <div className="flex items-start gap-3">
+                      <Phone size={18} className="text-xds-blue-light mt-0.5" />
+                      <div>
+                        <div className="text-white/50 text-xs uppercase tracking-wider">Phone</div>
+                        <a href="tel:5599466131" className="text-white font-semibold hover:text-xds-blue-light">(559) 946-6131</a>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <MapPin size={18} className="text-xds-blue-light mt-0.5" />
+                      <div>
+                        <div className="text-white/50 text-xs uppercase tracking-wider">Headquarters</div>
+                        <div className="text-white font-semibold">377 S. Oakmore St., Tulare, CA 93274</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -267,10 +309,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* FAQ */}
       <section className="bg-white">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+          <div className="max-w-2xl">
+            <div className="section-eyebrow">Common questions</div>
+            <h2 className="mt-3 font-display font-extrabold text-4xl lg:text-5xl text-xds-ink leading-tight">
+              Frequently asked.
+            </h2>
+            <p className="mt-5 text-lg text-xds-slate leading-relaxed">
+              Quick answers for dairy operators and manufacturers evaluating XDS. Have something else? Call us at (559) 946-6131.
+            </p>
+          </div>
+          <div className="mt-12">
+            <Faq items={faqs} />
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="bg-xds-soft">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
-          <div className="bg-xds-soft border border-xds-line rounded-2xl p-10 lg:p-16 text-center">
+          <div className="bg-white border border-xds-line rounded-2xl p-10 lg:p-16 text-center">
             <h2 className="font-display font-extrabold text-3xl lg:text-4xl text-xds-ink">
               Equipment down? Need a quote?
             </h2>

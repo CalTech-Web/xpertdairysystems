@@ -69,7 +69,7 @@ function InfoCard({
       <div className="w-10 h-10 rounded-lg bg-xds-blue/10 flex items-center justify-center text-xds-blue">
         <Icon size={20} />
       </div>
-      <h3 className="mt-4 font-display font-bold text-base text-xds-ink uppercase tracking-wider text-sm">
+      <h3 className="mt-4 font-display font-bold text-xs text-xds-ink uppercase tracking-wider">
         {title}
       </h3>
       <div className="mt-2 text-xds-charcoal text-sm leading-relaxed">{body}</div>

@@ -200,15 +200,26 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-/* Scroll reveal */
+/* Scroll reveal — content is visible by default (SSR safe); fades only when JS opts in */
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: none;
   transition: opacity 400ms ease, transform 400ms ease;
 }
-.reveal.is-visible {
+.reveal[data-pending="true"] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.reveal[data-pending="true"].is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal[data-pending="true"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Live pulse (24/7 indicators) */

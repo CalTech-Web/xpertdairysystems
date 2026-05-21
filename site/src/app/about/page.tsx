@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import ServiceIcon from "@/components/ServiceIcon";
+import Reveal from "@/components/Reveal";
+import { TopoBackground, MeshBackground } from "@/components/BgPatterns";
 
 export const metadata: Metadata = {
   title: "About XPERT Dairy Systems",
@@ -42,45 +44,50 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative bg-xds-ink text-white overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-40" />
-        <div className="absolute -top-32 right-1/4 w-[400px] h-[400px] bg-xds-blue/30 rounded-full blur-[120px]" />
+      <section className="relative text-white overflow-hidden">
+        <MeshBackground />
+        <TopoBackground variant="dark" opacity={0.05} />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
-          <div className="max-w-3xl">
-            <div className="section-eyebrow text-xds-blue-light">About XDS</div>
-            <h1 className="mt-3 font-display font-extrabold text-5xl lg:text-6xl text-white leading-[0.95]">
-              Locally owned. Hands on. Central Valley raised.
-            </h1>
-            <p className="mt-6 text-lg text-white/75 leading-relaxed max-w-2xl">
-              Based in Tulare, California, XPERT Dairy Systems Inc. is a locally owned company specializing in dairy equipment installation, maintenance, repair, and safety support services for dairy operations throughout California's Central Valley.
-            </p>
-          </div>
+          <Reveal>
+            <div className="max-w-3xl">
+              <div className="section-eyebrow on-dark">About XDS</div>
+              <h1 className="mt-3 font-display font-extrabold text-5xl lg:text-6xl text-white leading-[0.95]">
+                Locally owned. Hands on. Central Valley raised.
+              </h1>
+              <p className="mt-6 text-lg text-white/75 leading-relaxed max-w-2xl">
+                Based in Tulare, California, XPERT Dairy Systems Inc. is a locally owned company specializing in dairy equipment installation, maintenance, repair, and safety support services for dairy operations throughout California's Central Valley.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2">
-              <div className="section-eyebrow">Our story</div>
-              <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">
-                Founded on trust. Built for the field.
-              </h2>
-              <div className="mt-6 space-y-5 text-lg text-xds-slate leading-relaxed">
-                <p>
-                  XPERT Dairy Systems Inc. was built around a simple idea: dairy operators need a service partner who actually understands the equipment, not just the price list. Our team has extensive experience with pump rebuilds, gearbox replacements, separator repairs, fabrication work, emergency service calls, and preventative maintenance programs.
-                </p>
-                <p>
-                  Unlike sales only dealers, XDS works directly on manure systems daily. We're onsite at dairies across the Central Valley every week, which means we know what wears out, what fails first, and what it takes to keep operations running.
-                </p>
-                <p>
-                  At XPERT Dairy Systems Inc., we believe in building long term relationships through honesty, accountability, hard work, and exceptional customer service. We are proud to support the agricultural community and the hardworking dairy industry throughout the Central Valley.
-                </p>
+            <Reveal className="lg:col-span-2">
+              <div className="relative">
+                <span className="h2-accent" aria-hidden="true">01</span>
+                <div className="section-eyebrow">Our story</div>
+                <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">
+                  Founded on trust. Built for the field.
+                </h2>
+                <div className="mt-6 space-y-5 text-lg text-xds-slate leading-relaxed">
+                  <p>
+                    XPERT Dairy Systems Inc. was built around a simple idea: dairy operators need a service partner who actually understands the equipment, not just the price list. Our team has extensive experience with pump rebuilds, gearbox replacements, separator repairs, fabrication work, emergency service calls, and preventative maintenance programs.
+                  </p>
+                  <p>
+                    Unlike sales only dealers, XDS works directly on manure systems daily. We're onsite at dairies across the Central Valley every week, which means we know what wears out, what fails first, and what it takes to keep operations running.
+                  </p>
+                  <p>
+                    At XPERT Dairy Systems Inc., we believe in building long term relationships through honesty, accountability, hard work, and exceptional customer service. We are proud to support the agricultural community and the hardworking dairy industry throughout the Central Valley.
+                  </p>
+                </div>
               </div>
-            </div>
+            </Reveal>
 
-            <aside>
-              <div className="bg-xds-soft border border-xds-line rounded-xl p-8">
+            <Reveal as="aside" delay={120}>
+              <div className="bg-xds-soft border border-xds-line rounded-2xl p-8">
                 <h3 className="font-display font-bold text-xl text-xds-ink">Quick Facts</h3>
                 <dl className="mt-6 space-y-4 text-sm">
                   <div>
@@ -105,24 +112,32 @@ export default function AboutPage() {
                   </div>
                 </dl>
               </div>
-            </aside>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      <section className="bg-xds-soft">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
-          <div className="max-w-2xl">
-            <div className="section-eyebrow">What we stand for</div>
-            <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">Our values</h2>
-          </div>
+      <section className="relative bg-xds-soft overflow-hidden">
+        <TopoBackground opacity={0.06} />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+          <Reveal>
+            <div className="relative max-w-2xl">
+              <span className="h2-accent" aria-hidden="true">02</span>
+              <div className="section-eyebrow">What we stand for</div>
+              <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">Our values</h2>
+            </div>
+          </Reveal>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5">
-            {values.map((v) => (
-              <div key={v.title} className="h-full flex flex-col bg-white border border-xds-line rounded-xl p-8">
-                <CheckCircle2 size={28} className="text-xds-blue" />
-                <h3 className="mt-4 font-display font-bold text-xl text-xds-ink">{v.title}</h3>
-                <p className="mt-2 text-xds-slate leading-relaxed">{v.body}</p>
-              </div>
+            {values.map((v, idx) => (
+              <Reveal key={v.title} delay={idx * 60}>
+                <div className="card-lift h-full flex flex-col bg-white border border-xds-line rounded-xl p-8">
+                  <span className="icon-bubble w-12 h-12">
+                    <CheckCircle2 size={22} className="text-xds-blue" />
+                  </span>
+                  <h3 className="mt-4 font-display font-bold text-xl text-xds-ink">{v.title}</h3>
+                  <p className="mt-2 text-xds-slate leading-relaxed">{v.body}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -130,46 +145,66 @@ export default function AboutPage() {
 
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
-          <div className="max-w-2xl">
-            <div className="section-eyebrow">Leadership Team</div>
-            <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">The people behind XDS</h2>
-          </div>
+          <Reveal>
+            <div className="relative max-w-2xl">
+              <span className="h2-accent" aria-hidden="true">03</span>
+              <div className="section-eyebrow">Leadership Team</div>
+              <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">The people behind XDS</h2>
+            </div>
+          </Reveal>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {leadership.map((p) => {
+            {leadership.map((p, idx) => {
               const isSafety = p.role.toLowerCase().includes("safety");
               return (
-                <div key={p.name} className="h-full border border-xds-line rounded-xl p-8 flex gap-6">
-                  {isSafety ? (
+                <Reveal key={p.name} delay={idx * 60}>
+                  <div className="card-lift h-full border border-xds-line rounded-xl p-8 flex gap-6">
                     <div className="shrink-0">
-                      <ServiceIcon name="safety-compliance" size={64} />
+                      {isSafety ? (
+                        <div className="relative w-20 h-20">
+                          <div className="absolute inset-0 rounded-2xl bg-xds-blue-tint flex items-center justify-center">
+                            <ServiceIcon name="safety-compliance" size={56} />
+                          </div>
+                          <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-xds-amber ring-2 ring-white" />
+                        </div>
+                      ) : (
+                        <div className="relative w-20 h-20">
+                          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#DBEAFE] via-[#3B82F6] to-[#1E5FAE] shadow-md" />
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="font-display font-extrabold text-2xl text-white drop-shadow">
+                              {p.name.split(" ").map((n) => n[0]).join("")}
+                            </span>
+                          </div>
+                          <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-xds-amber ring-2 ring-white" />
+                        </div>
+                      )}
                     </div>
-                  ) : (
-                    <div className="w-16 h-16 rounded-full bg-xds-blue/10 flex items-center justify-center text-xds-blue font-display font-extrabold text-xl shrink-0">
-                      {p.name.split(" ").map((n) => n[0]).join("")}
+                    <div className="flex-1">
+                      <h3 className="font-display font-bold text-xl text-xds-ink">{p.name}</h3>
+                      <div className="text-xs font-semibold uppercase tracking-wider text-xds-blue mt-1">{p.role}</div>
+                      <div className="my-4 h-px bg-xds-line" />
+                      <p className="text-sm text-xds-slate leading-relaxed">{p.bio}</p>
                     </div>
-                  )}
-                  <div>
-                    <h3 className="font-display font-bold text-xl text-xds-ink">{p.name}</h3>
-                    <div className="text-xs font-semibold uppercase tracking-wider text-xds-blue mt-1">{p.role}</div>
-                    <p className="mt-3 text-sm text-xds-slate leading-relaxed">{p.bio}</p>
                   </div>
-                </div>
+                </Reveal>
               );
             })}
           </div>
         </div>
       </section>
 
-      <section className="bg-xds-ink text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 text-center">
-          <h2 className="font-display font-extrabold text-3xl lg:text-4xl">Ready to put XDS to work?</h2>
-          <p className="mt-4 text-white/75 max-w-xl mx-auto">
-            Reach out for service, parts, or a manufacturer partnership conversation.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4 justify-center">
-            <a href="tel:5599466131" className="btn-ghost"><Phone size={18} /> (559) 946-6131</a>
-            <Link href="/contact" className="btn-primary">Send a Message <ArrowRight size={18} /></Link>
-          </div>
+      <section className="relative text-white overflow-hidden">
+        <MeshBackground />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 text-center">
+          <Reveal>
+            <h2 className="font-display font-extrabold text-3xl lg:text-4xl">Ready to put XDS to work?</h2>
+            <p className="mt-4 text-white/75 max-w-xl mx-auto">
+              Reach out for service, parts, or a manufacturer partnership conversation.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4 justify-center">
+              <a href="tel:5599466131" className="btn-ghost"><Phone size={18} /> (559) 946-6131</a>
+              <Link href="/contact" className="btn-primary">Send a Message <ArrowRight size={18} /></Link>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>

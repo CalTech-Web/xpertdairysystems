@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { MeshBackground, TopoBackground } from "./BgPatterns";
 
 const services = [
   { label: "Pump Repair", href: "/services#pump-repair" },
@@ -21,8 +22,21 @@ const company = [
 
 export default function Footer() {
   return (
-    <footer className="bg-xds-ink text-white mt-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="relative text-white mt-24 overflow-hidden">
+      {/* Top gradient line */}
+      <div
+        aria-hidden="true"
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{
+          background:
+            "linear-gradient(90deg, #F59E0B 0%, #1E5FAE 30%, #1E5FAE 60%, transparent 100%)",
+        }}
+      />
+
+      <MeshBackground />
+      <TopoBackground variant="dark" opacity={0.05} />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-1">
             <Logo variant="light" size="md" />
@@ -31,15 +45,15 @@ export default function Footer() {
             </p>
             <div className="mt-6 space-y-3 text-sm">
               <a href="tel:5599466131" className="flex items-center gap-3 text-white/90 hover:text-white">
-                <Phone size={16} className="text-xds-blue-light" />
+                <Phone size={16} className="text-[#93C5FD]" />
                 (559) 946-6131
               </a>
               <a href="mailto:Xpertdairy@gmail.com" className="flex items-center gap-3 text-white/90 hover:text-white">
-                <Mail size={16} className="text-xds-blue-light" />
+                <Mail size={16} className="text-[#93C5FD]" />
                 Xpertdairy@gmail.com
               </a>
               <div className="flex items-start gap-3 text-white/90">
-                <MapPin size={16} className="text-xds-blue-light mt-0.5 shrink-0" />
+                <MapPin size={16} className="text-[#93C5FD] mt-0.5 shrink-0" />
                 <span>
                   377 S. Oakmore St.
                   <br />
@@ -54,7 +68,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {services.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="text-sm text-white/70 hover:text-white transition-colors">
+                  <Link href={s.href} className="link-underline text-sm text-white/70 hover:text-white transition-colors">
                     {s.label}
                   </Link>
                 </li>
@@ -67,7 +81,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {company.map((c) => (
                 <li key={c.href}>
-                  <Link href={c.href} className="text-sm text-white/70 hover:text-white transition-colors">
+                  <Link href={c.href} className="link-underline text-sm text-white/70 hover:text-white transition-colors">
                     {c.label}
                   </Link>
                 </li>
@@ -92,7 +106,7 @@ export default function Footer() {
           </p>
           <p className="text-xs text-white/50">
             Powered by{" "}
-            <a href="https://caltechweb.com" className="text-white/70 hover:text-white">
+            <a href="https://caltechweb.com" className="text-white/70 hover:text-white link-underline">
               Caltechweb
             </a>
           </p>

@@ -176,12 +176,12 @@ export default function Home() {
               <Link
                 key={title}
                 href={href}
-                className="group bg-white border border-xds-line rounded-xl p-6 hover:border-xds-blue hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                className="group h-full flex flex-col bg-white border border-xds-line rounded-xl p-6 hover:border-xds-blue hover:shadow-lg hover:-translate-y-0.5 transition-all"
               >
                 <ServiceIcon name={icon} size={56} />
                 <h3 className="mt-4 font-display font-bold text-lg text-xds-ink">{title}</h3>
                 <p className="mt-2 text-sm text-xds-slate leading-relaxed">{body}</p>
-                <div className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-xds-blue">
+                <div className="mt-auto pt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-xds-blue">
                   Learn more
                   <ArrowRight size={12} />
                 </div>
@@ -256,7 +256,7 @@ export default function Home() {
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {leadership.map((p) => (
-              <div key={p.name} className="bg-white border border-xds-line rounded-xl p-6">
+              <div key={p.name} className="h-full flex flex-col bg-white border border-xds-line rounded-xl p-6">
                 <div className="w-14 h-14 rounded-full bg-xds-blue/10 flex items-center justify-center text-xds-blue font-display font-extrabold text-lg">
                   {p.name.split(" ").map((n) => n[0]).join("")}
                 </div>
@@ -297,7 +297,7 @@ export default function Home() {
 
       {/* FAQ */}
       <section className="bg-white">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <div className="max-w-2xl">
             <div className="section-eyebrow">Common questions</div>
             <h2 className="mt-3 font-display font-extrabold text-4xl lg:text-5xl text-xds-ink leading-tight">

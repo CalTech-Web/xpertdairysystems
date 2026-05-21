@@ -94,7 +94,7 @@ export default function DealerPartnersPage() {
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {offers.map(({ icon, title, body }) => (
-              <div key={title} className="bg-white border border-xds-line rounded-xl p-6">
+              <div key={title} className="h-full flex flex-col bg-white border border-xds-line rounded-xl p-6">
                 <ServiceIcon name={icon} size={56} />
                 <h3 className="mt-4 font-display font-bold text-lg text-xds-ink">{title}</h3>
                 <p className="mt-2 text-sm text-xds-slate leading-relaxed">{body}</p>

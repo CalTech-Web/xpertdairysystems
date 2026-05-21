@@ -118,7 +118,7 @@ export default function AboutPage() {
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5">
             {values.map((v) => (
-              <div key={v.title} className="bg-white border border-xds-line rounded-xl p-8">
+              <div key={v.title} className="h-full flex flex-col bg-white border border-xds-line rounded-xl p-8">
                 <CheckCircle2 size={28} className="text-xds-blue" />
                 <h3 className="mt-4 font-display font-bold text-xl text-xds-ink">{v.title}</h3>
                 <p className="mt-2 text-xds-slate leading-relaxed">{v.body}</p>
@@ -138,7 +138,7 @@ export default function AboutPage() {
             {leadership.map((p) => {
               const isSafety = p.role.toLowerCase().includes("safety");
               return (
-                <div key={p.name} className="border border-xds-line rounded-xl p-8 flex gap-6">
+                <div key={p.name} className="h-full border border-xds-line rounded-xl p-8 flex gap-6">
                   {isSafety ? (
                     <div className="shrink-0">
                       <ServiceIcon name="safety-compliance" size={64} />

@@ -1,7 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Phone, CheckCircle2, MapPin, Wrench, AlertTriangle } from "lucide-react";
-import Logo from "@/components/Logo";
+import { ArrowRight, Phone, CheckCircle2, Wrench, AlertTriangle } from "lucide-react";
 import Faq from "@/components/Faq";
 import ServiceIcon, { type ServiceIconName } from "@/components/ServiceIcon";
 import Reveal from "@/components/Reveal";
@@ -37,8 +35,7 @@ export default function Home() {
         <TopoBackground variant="dark" opacity={0.05} />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
+          <div className="max-w-3xl">
               <Reveal>
                 <div className="inline-flex items-center gap-2.5 px-3 py-1.5 bg-white/[0.04] border border-white/10 rounded-full text-xs font-semibold tracking-wider uppercase text-white/85">
                   <span className="live-dot" />
@@ -83,51 +80,6 @@ export default function Home() {
                   <span className="flex items-center gap-2"><CheckCircle2 size={16} className="text-xds-amber" /> Weekly onsite at Central Valley dairies</span>
                 </div>
               </Reveal>
-            </div>
-
-            <Reveal delay={150} className="lg:col-span-5">
-              <div className="relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur overflow-hidden glow-card">
-                <div className="relative h-56 sm:h-64 overflow-hidden">
-                  <Image
-                    src="/images/cow-photo-bw.jpg"
-                    alt="Dairy cow in a Central Valley operation"
-                    fill
-                    sizes="(min-width: 1024px) 480px, 100vw"
-                    className="object-cover opacity-95"
-                    priority
-                    fetchPriority="high"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-xds-blue-deepest/40 to-xds-blue-deepest" />
-                  <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
-                    <Logo variant="light" size="sm" />
-                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/70 bg-black/40 backdrop-blur rounded px-2 py-1 border border-white/10">EST. CENTRAL VALLEY</span>
-                  </div>
-                </div>
-                <div className="p-8 lg:p-10 pt-2">
-                  <p className="tagline-lockup text-xl text-white">
-                    Xpert Solutions.
-                    <br />
-                    Stronger Dairies.
-                  </p>
-                  <div className="mt-7 space-y-4 text-sm">
-                    <div className="flex items-start gap-3">
-                      <span className="phone-ring text-[#93C5FD] mt-0.5"><Phone size={18} /></span>
-                      <div>
-                        <div className="text-white/50 text-xs uppercase tracking-wider">Phone</div>
-                        <a href="tel:5599466131" className="text-white font-semibold link-underline">(559) 946-6131</a>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <MapPin size={18} className="text-[#93C5FD] mt-0.5" />
-                      <div>
-                        <div className="text-white/50 text-xs uppercase tracking-wider">Headquarters</div>
-                        <div className="text-white font-semibold">377 S. Oakmore St., Tulare, CA 93274</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
           </div>
         </div>
       </section>
@@ -171,8 +123,7 @@ export default function Home() {
         <TopoBackground opacity={0.06} />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <Reveal>
-            <div className="relative max-w-2xl">
-              <span className="h2-accent" aria-hidden="true">01</span>
+            <div className="max-w-2xl">
               <div className="section-eyebrow">What we do</div>
               <h2 className="mt-3 font-display font-extrabold text-4xl lg:text-5xl text-xds-ink leading-tight">
                 Field service for the equipment dairies depend on.
@@ -222,8 +173,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <Reveal>
-              <div className="relative">
-                <span className="h2-accent" aria-hidden="true">02</span>
+              <div>
                 <div className="section-eyebrow">Why XDS</div>
                 <h2 className="mt-3 font-display font-extrabold text-4xl lg:text-5xl text-xds-ink leading-tight">
                   Hands on. In the field. Every day.
@@ -271,8 +221,7 @@ export default function Home() {
       <section className="bg-xds-soft">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <Reveal>
-            <div className="relative max-w-2xl">
-              <span className="h2-accent" aria-hidden="true">03</span>
+            <div className="max-w-2xl">
               <div className="section-eyebrow">Leadership</div>
               <h2 className="mt-3 font-display font-extrabold text-4xl lg:text-5xl text-xds-ink leading-tight">
                 The team behind every job.
@@ -314,7 +263,6 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <Reveal>
             <div className="max-w-3xl">
-              <span className="h2-accent text-white" aria-hidden="true" style={{ opacity: 0.06 }}>04</span>
               <div className="section-eyebrow on-dark">For Manufacturers</div>
               <h2 className="mt-3 font-display font-extrabold text-4xl lg:text-5xl text-white leading-tight">
                 A trusted local service partner in California's Central Valley.
@@ -341,8 +289,7 @@ export default function Home() {
         <DotGrid />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <Reveal>
-            <div className="relative max-w-2xl">
-              <span className="h2-accent" aria-hidden="true">05</span>
+            <div className="max-w-2xl">
               <div className="section-eyebrow">Common questions</div>
               <h2 className="mt-3 font-display font-extrabold text-4xl lg:text-5xl text-xds-ink leading-tight">
                 Frequently asked.

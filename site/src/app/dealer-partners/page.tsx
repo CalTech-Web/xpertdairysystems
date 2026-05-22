@@ -73,7 +73,6 @@ export default function DealerPartnersPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <Reveal>
               <div className="relative">
-                <span className="h2-accent" aria-hidden="true">01</span>
                 <div className="section-eyebrow">Why XDS</div>
                 <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">
                   A stronger dealer because we do the actual work.
@@ -108,7 +107,6 @@ export default function DealerPartnersPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <Reveal>
             <div className="relative max-w-2xl">
-              <span className="h2-accent" aria-hidden="true">02</span>
               <div className="section-eyebrow">What XDS provides</div>
               <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">
                 The full scope of dealer and service partner support.

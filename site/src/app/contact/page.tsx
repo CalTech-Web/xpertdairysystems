@@ -54,7 +54,6 @@ export default function ContactPage() {
 
             <Reveal delay={120} className="lg:col-span-2">
               <div className="relative">
-                <span className="h2-accent" aria-hidden="true">01</span>
                 <h2 className="font-display font-extrabold text-3xl text-xds-ink">Send a Message</h2>
                 <p className="mt-3 text-xds-slate">
                   Fill out the form and we will be in touch. For emergency equipment failures, please call (559) 946-6131 directly.

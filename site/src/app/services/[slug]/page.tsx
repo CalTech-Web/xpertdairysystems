@@ -108,7 +108,6 @@ export default async function ServiceDetailPage(props: PageProps<"/services/[slu
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             <Reveal>
               <div className="relative">
-                <span className="h2-accent" aria-hidden="true">01</span>
                 <div className="section-eyebrow">The challenge</div>
                 <h2 className="mt-3 font-display font-extrabold text-3xl lg:text-4xl text-xds-ink leading-tight">
                   {service.problemStatement.headline}
@@ -120,7 +119,6 @@ export default async function ServiceDetailPage(props: PageProps<"/services/[slu
             </Reveal>
             <Reveal delay={120}>
               <div className="relative">
-                <span className="h2-accent" aria-hidden="true">02</span>
                 <div className="section-eyebrow">How XDS handles it</div>
                 <h2 className="mt-3 font-display font-extrabold text-3xl lg:text-4xl text-xds-ink leading-tight">
                   {service.approach.headline}
@@ -140,7 +138,6 @@ export default async function ServiceDetailPage(props: PageProps<"/services/[slu
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <Reveal>
             <div className="relative max-w-2xl">
-              <span className="h2-accent" aria-hidden="true">03</span>
               <div className="section-eyebrow">What's included</div>
               <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">
                 The scope of work.
@@ -170,7 +167,6 @@ export default async function ServiceDetailPage(props: PageProps<"/services/[slu
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <Reveal>
             <div className="relative max-w-2xl">
-              <span className="h2-accent" aria-hidden="true">04</span>
               <div className="section-eyebrow">What we typically see</div>
               <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">
                 Common issues we fix.
@@ -199,7 +195,6 @@ export default async function ServiceDetailPage(props: PageProps<"/services/[slu
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <Reveal>
             <div className="relative max-w-2xl">
-              <span className="h2-accent" aria-hidden="true">05</span>
               <div className="section-eyebrow">Our process</div>
               <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">
                 Step by step.

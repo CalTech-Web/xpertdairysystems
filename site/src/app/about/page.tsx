@@ -76,7 +76,6 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-3 gap-12">
             <Reveal className="lg:col-span-2">
               <div className="relative">
-                <span className="h2-accent" aria-hidden="true">01</span>
                 <div className="section-eyebrow">Our story</div>
                 <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">
                   Founded on trust. Built for the field.
@@ -131,7 +130,6 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <Reveal>
             <div className="relative max-w-2xl">
-              <span className="h2-accent" aria-hidden="true">02</span>
               <div className="section-eyebrow">What we stand for</div>
               <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">Our values</h2>
             </div>
@@ -156,7 +154,6 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
           <Reveal>
             <div className="relative max-w-2xl">
-              <span className="h2-accent" aria-hidden="true">03</span>
               <div className="section-eyebrow">Leadership Team</div>
               <h2 className="mt-3 font-display font-extrabold text-4xl text-xds-ink leading-tight">The people behind XDS</h2>
             </div>
